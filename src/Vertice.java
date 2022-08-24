@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Vertice<T> {
     public T dado;
+    public T informacao;
     public ArrayList<Aresta<T>> arestaEntrada;
     public ArrayList<Aresta<T>> arestaSaida;
 

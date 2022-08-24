@@ -12,6 +12,11 @@ public class App {
         grafo.adicionarVertice("B");
         grafo.adicionarVertice("C");
         grafo.adicionarVertice("D");
+
+        grafo.seta_informação("A", "11");
+        grafo.seta_informação("B", "12");
+        grafo.seta_informação("C", "13");
+        grafo.seta_informação("D", "14");
         
         grafo.cria_adj(2.0, "A", "B");
         grafo.cria_adj(2.0, "A", "C");
@@ -22,6 +27,29 @@ public class App {
         grafo.adjacentes("A", adj);
         grafo.adjacentes("B", adj);
 
+
+        for (int i = 0; i < grafo.arestasList.size(); i++) {
+            System.out.println("Vertice/Nó: " + grafo.arestasList.get(i).inicio.dado + " " + grafo.arestasList.get(i).fim.dado);
+        }
+
+        System.out.println("---------------------------");
+        grafo.remove_adjacencia("A", "C");
+
+        for (int i = 0; i < grafo.arestasList.size(); i++) {
+            System.out.println("Vertice/Nó: " + grafo.arestasList.get(i).inicio.dado + " " + grafo.arestasList.get(i).fim.dado);
+        }
+        /*
+        for (int i = 0; i < grafo.verticesList.size(); i++) {
+            System.out.println("Vertice/Nó: " + grafo.verticesList.get(i).dado);
+        }
+        */
+
+        /*
+        for (int i = 0; i < grafo.verticesList.size(); i++) {
+            System.out.println("Informação: " + grafo.verticesList.get(i).informacao);
+        }
+        */
+        
         
         //Mostra adjacentes
         /*

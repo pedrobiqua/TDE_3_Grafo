@@ -4,6 +4,7 @@ public class Grafo<T> {
     public ArrayList<Vertice<T>> verticesList;
     public ArrayList<Aresta<T>> arestasList;
 
+    //Montar uma matriz boleana para o tde_3 temporaria. para poder fazer o algoritimo Warshall
     public Grafo() {
         verticesList = new ArrayList<Vertice<T>>();
         arestasList = new ArrayList<Aresta<T>>();
@@ -22,11 +23,19 @@ public class Grafo<T> {
 
     }
 
-    /*
-    int remove_adjacencia(){
+    
+    void remove_adjacencia(T dadoIncial, T dadoFinal){
+        Vertice<T> inicio = this.obtemVertice(dadoIncial);
+        Vertice<T> fim = this.obtemVertice(dadoFinal);
 
+        for (int i = 0; i < arestasList.size(); i++) {
+            if ((arestasList.get(i).inicio.dado == inicio.dado) && (arestasList.get(i).fim.dado == fim.dado)) {
+                arestasList.remove(i);
+            }
+            
+        }
     }
-    */
+    
 
     public void imprime_adjacencias() {
         for (int i = 0; i < verticesList.size(); i++) {
@@ -46,12 +55,12 @@ public class Grafo<T> {
         }
     }
 
-    /*
-    void seta_informação(){
-
+    
+    void seta_informação(T dado, T informacao){
+        this.obtemVertice(dado).informacao = informacao;
     }
 
-    */
+    
 
     public int adjacentes(T dado, ArrayList<Integer> adj){
 
