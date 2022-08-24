@@ -4,10 +4,27 @@ public class App {
         System.out.println("ESTUDOS DE GRAFO");
 
         Grafo<String> grafo = new Grafo<String>();
-        grafo.adicionarVertice("Pedro");
-        grafo.adicionarVertice("Lukas");
-        //grafo.adicionarVertice("Thiago");
+        grafo.adicionarVertice("A");
+        grafo.adicionarVertice("B");
+        grafo.adicionarVertice("C");
 
-        grafo.adicionarAresta(2.0, "Pedro", "Lukas");
+        
+
+        
+        grafo.cria_adj(2.0, "A", "B");
+        grafo.cria_adj(2.0, "A", "C");
+
+        grafo.imprime_adjacencias();
+
+        /*
+        for (int i = 0; i < grafo.arestasList.size(); i++) {
+            System.out.println(grafo.arestasList.get(i).inicio.dado);
+            System.out.println(grafo.arestasList.get(i).fim.dado);
+        }
+        */
+
+        //grafo.print();
+        
+        
     }
 }
