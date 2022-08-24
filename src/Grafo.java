@@ -7,32 +7,6 @@ public class Grafo<T> {
     public Grafo() {
         verticesList = new ArrayList<Vertice<T>>();
         arestasList = new ArrayList<Aresta<T>>();
-
-    }
-
-    public void imprime_adjacencias() {
-        for (int i = 0; i < verticesList.size(); i++) {
-            System.out.print(verticesList.get(i).dado);
-
-            var arestaAnalisada =  verticesList.get(i).arestaSaida;
-            
-            for (int j = 0; j < arestaAnalisada.size(); j++) {
-
-                if (arestaAnalisada.get(j).inicio.dado.equals(verticesList.get(i).dado)) {
-                    System.out.print(" - " + arestaAnalisada.get(j).fim.dado);    
-                } else {
-                    System.out.print(" - " + arestaAnalisada.get(j).inicio.dado);
-                }
-                
-                
-            }
-            System.out.println();
-        }
-    }
-
-    public void adicionarVertice(T dado) {
-        var newVertice = new Vertice<T>(dado);
-        this.verticesList.add(newVertice);
     }
 
     public void cria_adj(Double peso, T dadoInicio, T dadoFim) {
@@ -48,6 +22,57 @@ public class Grafo<T> {
 
     }
 
+    /*
+    int remove_adjacencia(){
+
+    }
+    */
+
+    public void imprime_adjacencias() {
+        for (int i = 0; i < verticesList.size(); i++) {
+            System.out.print(verticesList.get(i).dado);
+
+            var arestaAnalisada =  verticesList.get(i).arestaSaida;
+            
+            for (int j = 0; j < arestaAnalisada.size(); j++) {
+
+                if (arestaAnalisada.get(j).inicio.dado.equals(verticesList.get(i).dado)) {
+                    System.out.print(" - " + arestaAnalisada.get(j).fim.dado);    
+                } else {
+                    System.out.print(" - " + arestaAnalisada.get(j).inicio.dado);
+                }            
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    void seta_informação(){
+
+    }
+
+    */
+
+    public int adjacentes(T dado, ArrayList<Integer> adj){
+
+        Vertice<T> temp = this.obtemVertice(dado);
+        var listaAdj = temp.arestaSaida;
+        int contador = 0;
+        for (int i = 0; i < listaAdj.size(); i++) {
+            contador++;
+        }
+
+        adj.add(contador);
+
+        return contador;
+    }
+
+    //Os metodos abaixo são para facilitar alguns processos repetitivos
+    public void adicionarVertice(T dado) {
+        var newVertice = new Vertice<T>(dado);
+        this.verticesList.add(newVertice);
+    }
+
     public Vertice<T> obtemVertice(T dado) {
         Vertice<T> vertice = null;
         for (int i = 0; i < this.verticesList.size(); i++) {
@@ -60,6 +85,7 @@ public class Grafo<T> {
         return vertice;
     }
 
+    //Mostra todos os vertices
     public void print() {
         ArrayList<Vertice<T>> marcados = new ArrayList<Vertice<T>>();
         ArrayList<Vertice<T>> fila = new ArrayList<Vertice<T>>();
