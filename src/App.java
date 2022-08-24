@@ -29,14 +29,14 @@ public class App {
 
 
         for (int i = 0; i < grafo.arestasList.size(); i++) {
-            System.out.println("Vertice/Nó: " + grafo.arestasList.get(i).inicio.dado + " " + grafo.arestasList.get(i).fim.dado);
+            System.out.println("Arestas: " + grafo.arestasList.get(i).inicio.dado + "-" + grafo.arestasList.get(i).fim.dado);
         }
 
         System.out.println("---------------------------");
         grafo.remove_adjacencia("A", "C");
 
         for (int i = 0; i < grafo.arestasList.size(); i++) {
-            System.out.println("Vertice/Nó: " + grafo.arestasList.get(i).inicio.dado + " " + grafo.arestasList.get(i).fim.dado);
+            System.out.println("Arestas: " + grafo.arestasList.get(i).inicio.dado + "-" + grafo.arestasList.get(i).fim.dado);
         }
         /*
         for (int i = 0; i < grafo.verticesList.size(); i++) {
