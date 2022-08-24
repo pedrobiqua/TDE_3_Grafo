@@ -82,7 +82,7 @@ public class Grafo<T> {
         this.verticesList.add(newVertice);
     }
 
-    public Vertice<T> obtemVertice(T dado) {
+    private Vertice<T> obtemVertice(T dado) {
         Vertice<T> vertice = null;
         for (int i = 0; i < this.verticesList.size(); i++) {
             if (this.verticesList.get(i).dado.equals(dado)) {
