@@ -38,21 +38,24 @@ public class App {
         for (int i = 0; i < grafo.arestasList.size(); i++) {
             System.out.println("Arestas: " + grafo.arestasList.get(i).inicio.dado + "-" + grafo.arestasList.get(i).fim.dado);
         }
+
         /*
+        //Mostrando todos os vertices do grafo.
         for (int i = 0; i < grafo.verticesList.size(); i++) {
             System.out.println("Vertice/Nó: " + grafo.verticesList.get(i).dado);
         }
         */
 
         /*
+        //Mostrando todas as informações do grafo
         for (int i = 0; i < grafo.verticesList.size(); i++) {
             System.out.println("Informação: " + grafo.verticesList.get(i).informacao);
         }
         */
         
         
-        //Mostra adjacentes
         /*
+        //Mostra adjacentes
         for (int i = 0; i < adj.size(); i++) {
             System.out.print(adj.get(i) + " ");
         }
